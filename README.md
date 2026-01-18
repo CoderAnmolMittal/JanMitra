@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JanMitra
 
-## Getting Started
+JanMitra is a voice-first companion that helps rural Indians access government schemes, financial information, and local support in their own language, through a web browser or a simple phone call.
 
-First, run the development server:
+Users can either open a web page and speak, or call a phone number. In both cases, JanMitra provides real-time spoken responses with a strong focus on accessibility, accuracy and simplicity.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Millions of rural citizens struggle to access government services not because support doesn’t exist, but because information is difficult to find, understand, or navigate. JanMitra bridges this gap by turning complex public systems into simple voice conversations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## How It Works (Actual Implementation)
 
-To learn more about Next.js, take a look at the following resources:
+Web Browser / Mobile Phone  
+→ WebSocket  
+→ Gemini Live  
+→ WebSocket  
+→ Voice Response  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Browser users interact via a voice-enabled web client  
+- Phone users interact via calls powered by Exotel  
+- Both interfaces use the same WebSocket backend  
+- Gemini Live handles speech-to-text, reasoning, and text-to-speech  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Core Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Web browser access with no app installation
+- Phone call access via Exotel for basic mobile phones
+- Real-time speech-to-speech interaction
+- Multiple language support
+- Factual responses focused on public information
+- Low-friction design with no login or setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Target Users
+
+- Rural citizens in India with internet or basic phone access
+- Users facing language barriers, complex portals and middlemen dependency
+
+---
+
+## Tech Stack
+
+- Frontend: NextJs
+- Calling: Exotel
+- Transport: WebSocket
+- Voice + LLM: Google Gemini Live
+- Backend: Lightweight WebSocket server
+- Deployment: Vercel
+
+---
+
+## Current MVP Scope
+
+- Interfaces: Web browser and phone calls
+- Interaction: Voice-only
+- Data: Prompt guided factual responses
+- Tools: None (planned for future)
+
+---
+
+## Guardrails
+
+- No medical, legal, or political advice
+- No personal data storage
+- Public-information-only responses
+- Off-topic queries are filtered
+
+---
